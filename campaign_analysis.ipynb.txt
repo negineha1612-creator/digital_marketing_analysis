@@ -1,0 +1,47 @@
+# ?? Digital Marketing Campaign Analysis
+# Author: Neha | B.A. Economics & English | Data Analyst Learner
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.set(style="whitegrid")
+
+# Load dataset
+data = pd.read_csv("../data/marketing_campaign.csv")
+display(data.head())
+
+# Add calculated columns
+data['CTR'] = (data['Clicks'] / data['Impressions']) * 100
+data['Conversion_Rate'] = (data['Conversions'] / data['Clicks']) * 100
+data['CPC'] = data['Cost'] / data['Clicks']
+
+# Summary
+display(data.describe())
+
+# CTR by Platform
+plt.figure(figsize=(8,5))
+sns.barplot(data=data, x="Platform", y="CTR", hue="Campaign", palette="coolwarm")
+plt.title("Click Through Rate by Platform")
+plt.savefig("../visuals/ctr_platform.png")
+plt.show()
+
+# Conversion Rate by Platform
+plt.figure(figsize=(8,5))
+sns.barplot(data=data, x="Platform", y="Conversion_Rate", hue="Campaign", palette="magma")
+plt.title("Conversion Rate by Platform")
+plt.savefig("../visuals/conversion_rate.png")
+plt.show()
+
+# Cost Efficiency (CPC)
+plt.figure(figsize=(8,5))
+sns.barplot(data=data, x="Platform", y="CPC", hue="Campaign", palette="crest")
+plt.title("Cost Per Click by Platform")
+plt.savefig("../visuals/cpc.png")
+plt.show()
+
+# Insights
+print("?? Insights:")
+print("1?? Instagram has the highest CTR and Conversion Rate across campaigns.")
+print("2?? Facebook performs steadily but with slightly higher CPC.")
+print("3?? YouTube has high reach (impressions) but low engagement — needs better targeting.")

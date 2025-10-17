@@ -1,0 +1,10 @@
+Campaign,Platform,Impressions,Clicks,Conversions,Cost
+Summer_Sale,Facebook,100000,3500,280,500
+Summer_Sale,Instagram,85000,4000,320,600
+Summer_Sale,YouTube,120000,2500,200,700
+Winter_Sale,Facebook,90000,3200,250,480
+Winter_Sale,Instagram,95000,4300,360,620
+Winter_Sale,YouTube,130000,2800,240,750
+Festive_Offer,Facebook,110000,3600,300,520
+Festive_Offer,Instagram,100000,4500,370,610
+Festive_Offer,YouTube,125000,2600,210,690
